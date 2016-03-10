@@ -1,0 +1,6 @@
+framework module Tuscan {
+	umbrella header "tuscan.h"
+	
+	export *
+	module * { export * }
+}

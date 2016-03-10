@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <scenes>
+        <!--Root View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="RootViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QNp-cd-NNi">
+                                <rect key="frame" x="277" y="285" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="shr-HA-lgn" kind="show" id="kRE-wO-Nto"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="QNp-cd-NNi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1NQ-Xg-bTg"/>
+                            <constraint firstItem="QNp-cd-NNi" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Vvt-1E-WQm"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="316" y="350"/>
+        </scene>
+        <!--Camera Navigation Controller-->
+        <scene sceneID="dEH-Di-Mxy">
+            <objects>
+                <navigationController navigationBarHidden="YES" id="shr-HA-lgn" customClass="CameraNavigationController" sceneMemberID="viewController">
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Xvf-Ri-pvD">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="hsS-yA-iA8" kind="relationship" relationship="rootViewController" id="S2A-W4-xMs"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gIM-on-Ctt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="996" y="350"/>
+        </scene>
+        <!--Camera View Controller-->
+        <scene sceneID="72u-H3-3rx">
+            <objects>
+                <viewController storyboardIdentifier="CameraViewController" id="hsS-yA-iA8" customClass="CameraViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mM2-Zp-1XX"/>
+                        <viewControllerLayoutGuide type="bottom" id="gD3-f0-yTP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ATh-Pt-J80">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="95F-0A-aZf" userLabel="Loading View">
+                                <rect key="frame" x="0.0" y="80" width="600" height="520"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="pEM-BX-QXq">
+                                        <rect key="frame" x="290" y="250" width="20" height="20"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="pEM-BX-QXq" firstAttribute="centerY" secondItem="95F-0A-aZf" secondAttribute="centerY" id="n9Z-KB-dwS"/>
+                                    <constraint firstItem="pEM-BX-QXq" firstAttribute="centerX" secondItem="95F-0A-aZf" secondAttribute="centerX" id="oIf-Tk-8AG"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eqP-QC-2aZ" userLabel="Capture View">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="6rr-bM-8i2" appends="YES" id="xaD-8C-as1"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wc9-OQ-Yxr" userLabel="Top Control View">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="80"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0hB-U6-8Hs" userLabel="Close Button">
+                                        <rect key="frame" x="0.0" y="20" width="80" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="dAL-6w-9uw"/>
+                                            <constraint firstAttribute="height" constant="60" id="lDv-zp-VKj"/>
+                                        </constraints>
+                                        <state key="normal" title="Close">
+                                            <color key="titleColor" red="0.91764705882352937" green="0.41176470588235292" blue="0.082352941176470587" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="closeButtonTapped:" destination="hsS-yA-iA8" eventType="touchUpInside" id="Ijo-zh-Ld0"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ehw-E0-85z">
+                                        <rect key="frame" x="520" y="20" width="80" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="Gow-0Z-Y2V"/>
+                                            <constraint firstAttribute="width" constant="80" id="dQA-wm-diX"/>
+                                        </constraints>
+                                        <state key="normal" title="Torch"/>
+                                        <connections>
+                                            <action selector="toggleTorch" destination="hsS-yA-iA8" eventType="touchUpInside" id="e9D-lt-Jhn"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.66000000000000003" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.97254901959999995" green="0.57647058819999997" blue="0.1137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="ehw-E0-85z" secondAttribute="bottom" id="70f-sf-VqM"/>
+                                    <constraint firstAttribute="trailing" secondItem="ehw-E0-85z" secondAttribute="trailing" id="oDZ-3H-4tW"/>
+                                    <constraint firstAttribute="height" constant="80" id="qJ1-F3-2Gd"/>
+                                    <constraint firstItem="0hB-U6-8Hs" firstAttribute="leading" secondItem="Wc9-OQ-Yxr" secondAttribute="leading" id="qau-V3-hqe"/>
+                                    <constraint firstAttribute="bottom" secondItem="0hB-U6-8Hs" secondAttribute="bottom" id="tNv-Od-B4W"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Wc9-OQ-Yxr" firstAttribute="top" secondItem="ATh-Pt-J80" secondAttribute="top" id="7c5-Kf-cCB"/>
+                            <constraint firstAttribute="bottom" secondItem="95F-0A-aZf" secondAttribute="bottom" id="Bde-Iy-k5k"/>
+                            <constraint firstAttribute="bottom" secondItem="eqP-QC-2aZ" secondAttribute="bottom" id="FXV-zT-RJ7"/>
+                            <constraint firstItem="Wc9-OQ-Yxr" firstAttribute="leading" secondItem="ATh-Pt-J80" secondAttribute="leading" id="PYp-tr-iNK"/>
+                            <constraint firstAttribute="trailing" secondItem="eqP-QC-2aZ" secondAttribute="trailing" id="TPl-HB-eZ2"/>
+                            <constraint firstItem="eqP-QC-2aZ" firstAttribute="top" secondItem="ATh-Pt-J80" secondAttribute="top" id="XEI-K0-Sec"/>
+                            <constraint firstItem="95F-0A-aZf" firstAttribute="leading" secondItem="ATh-Pt-J80" secondAttribute="leading" id="XeZ-Oc-zTQ"/>
+                            <constraint firstAttribute="trailing" secondItem="Wc9-OQ-Yxr" secondAttribute="trailing" id="ZoC-Pt-2Vd"/>
+                            <constraint firstItem="95F-0A-aZf" firstAttribute="top" secondItem="Wc9-OQ-Yxr" secondAttribute="bottom" id="f7U-ch-aMv"/>
+                            <constraint firstItem="eqP-QC-2aZ" firstAttribute="leading" secondItem="ATh-Pt-J80" secondAttribute="leading" id="oXh-xi-NYL"/>
+                            <constraint firstAttribute="trailing" secondItem="95F-0A-aZf" secondAttribute="trailing" id="wU5-Py-tOt"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="KQ7-Xi-yEI">
+                        <barButtonItem key="backBarButtonItem" title="Close" id="HIS-fk-TJX"/>
+                        <barButtonItem key="leftBarButtonItem" title="Close" id="eNW-Uy-jyN"/>
+                    </navigationItem>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="captureView" destination="eqP-QC-2aZ" id="96k-D6-Lw2"/>
+                        <outlet property="closeButton" destination="0hB-U6-8Hs" id="E0q-EG-dwj"/>
+                        <outlet property="loadingView" destination="95F-0A-aZf" id="Cc5-kC-FnK"/>
+                        <outlet property="topControlView" destination="Wc9-OQ-Yxr" id="TvR-0z-IJ8"/>
+                        <outlet property="torchButton" destination="ehw-E0-85z" id="PYU-q1-aCP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vVo-8K-SgZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="6rr-bM-8i2">
+                    <connections>
+                        <action selector="tapGestureRecognized:" destination="hsS-yA-iA8" id="yhH-Gf-O1T"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1698" y="350"/>
+        </scene>
+    </scenes>
+</document>
