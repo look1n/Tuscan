@@ -62,7 +62,6 @@
 -(void) viewDidLoad {
     [super viewDidLoad];
 	
-//	self.navigationBarHidden = YES;
 	AVAuthorizationStatus status = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
 	
 	switch (status) {
@@ -79,15 +78,6 @@
 			[self onUndefined:self.cameraDelegate];
 			break;
 	}
-	
-    [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationFade];
-}
-
-
--(void) viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-	
-    [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationFade];
 }
 
 
