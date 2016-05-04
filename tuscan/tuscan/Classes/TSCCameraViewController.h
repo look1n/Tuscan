@@ -58,7 +58,9 @@
 -(void) focusInTouchPoint:(CGPoint)touchPoint;
 
 
+-(IBAction) toggleTorch;
 @property (nonatomic) BOOL torchEnabled;
+
 @property (nonatomic) CGRect rectOfInterest;
 
 -(void) startSearch;

@@ -147,7 +147,13 @@
 
 	if (!self.metadataOutput.metadataObjectsDelegate) {
 		[self.metadataOutput setMetadataObjectsDelegate:self queue:dispatch_get_main_queue()];
-		[self.metadataOutput setMetadataObjectTypes:self.barcodeTypes];
+		NSMutableArray *metadataObjectTypes = [[NSMutableArray alloc] init];
+		for (id barcodeType in self.barcodeTypes) {
+			if ([self.metadataOutput.availableMetadataObjectTypes containsObject:barcodeType]) {
+				[metadataObjectTypes addObject:barcodeType];
+			}
+		}
+		[self.metadataOutput setMetadataObjectTypes:metadataObjectTypes];
 	}
 }
 
@@ -163,8 +169,13 @@
 
 -(void) setBarcodeTypes:(NSArray *)barcodeTypes {
 	_barcodeTypes = barcodeTypes;
-	
-	[self.metadataOutput setMetadataObjectTypes:self.barcodeTypes];
+	NSMutableArray *metadataObjectTypes = [[NSMutableArray alloc] init];
+	for (id barcodeType in barcodeTypes) {
+		if ([self.metadataOutput.availableMetadataObjectTypes containsObject:barcodeType]) {
+			[metadataObjectTypes addObject:barcodeType];
+		}
+	}
+	[self.metadataOutput setMetadataObjectTypes:metadataObjectTypes];
 }
 
 
