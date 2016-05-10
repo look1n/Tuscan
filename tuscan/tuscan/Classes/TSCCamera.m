@@ -256,6 +256,9 @@
 	for (AVMetadataObject *metadataObject in metadataObjects) {
 		if ([metadataObject isKindOfClass:[AVMetadataMachineReadableCodeObject class]]) {
 			AVMetadataMachineReadableCodeObject *codeObject = (AVMetadataMachineReadableCodeObject *)metadataObject;
+			if (!codeObject.stringValue) {
+				continue;
+			}
 			if (self.barcodeHandler) {
 				self.barcodeHandler(codeObject.stringValue);
 			}
