@@ -50,7 +50,7 @@
 		5C02D82C1C9038060039CB7A /* TSCCameraNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSCCameraNavigationController.m; sourceTree = "<group>"; };
 		5C02D82D1C9038060039CB7A /* TSCCameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCCameraViewController.h; sourceTree = "<group>"; };
 		5C02D82E1C9038060039CB7A /* TSCCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSCCameraViewController.m; sourceTree = "<group>"; };
-		5C02D8581C903F8A0039CB7A /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
+		5C02D8581C903F8A0039CB7A /* tuscan.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = tuscan.modulemap; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,7 +86,7 @@
 				5C02D80E1C9020790039CB7A /* Classes */,
 				5C02D7EA1C901DA90039CB7A /* tuscan.h */,
 				5C02D7EC1C901DA90039CB7A /* Info.plist */,
-				5C02D8581C903F8A0039CB7A /* module.modulemap */,
+				5C02D8581C903F8A0039CB7A /* tuscan.modulemap */,
 			);
 			path = tuscan;
 			sourceTree = "<group>";
@@ -317,7 +317,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = $PROJECT_DIR/tuscan/module.modulemap;
+				MODULEMAP_FILE = $PROJECT_DIR/tuscan/tuscan.modulemap;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.look1n.tuscan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -336,7 +336,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = $PROJECT_DIR/tuscan/module.modulemap;
+				MODULEMAP_FILE = $PROJECT_DIR/tuscan/tuscan.modulemap;
 				PRODUCT_BUNDLE_IDENTIFIER = com.look1n.tuscan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
